@@ -10,34 +10,56 @@ const divBoxes = document.querySelector('#boxes');
 const inputAmount = document.querySelector('input');
 
 
-let amount = 0;
-let arrays = [];
+// let arrays = [];
+// inputAmount.addEventListener('input', (event) => {
 
-inputAmount.addEventListener('input', (event) => {
-  amount = event.currentTarget.value;
-  
-  for (let i = 0; i < amount; i += 1) {
-    arrays[i] = i;
-  };
-  return arrays;
-});
+//   for (let i = 0; i < event.currentTarget.value; i += 1) {
+//     arrays[i] = i;
+//   };
+//   return arrays;
+// });
 
-buttonCreate.addEventListener('click', () => {
-  const elements = arrays.map(array => {
+// buttonCreate.addEventListener('click', () => {
 
-    const newDivBoxes = document.createElement("div");
-      newDivBoxes.style.width = `${30 + 10 * array}px`;
-      newDivBoxes.style.height = `${30 + 10 * array}px`;
-      newDivBoxes.style.backgroundColor = getRandomHexColor();
-    
-      return newDivBoxes;
-  })
-    
-    divBoxes.append(...elements);
-});
+//   const elements = arrays.map(array => {
+
+//     const newDivBoxes = document.createElement("div");
+
+//       newDivBoxes.style.width = `${30 + 10 * array}px`;
+//       newDivBoxes.style.height = `${30 + 10 * array}px`;
+//       newDivBoxes.style.backgroundColor = getRandomHexColor();
+//       return newDivBoxes;
+//   })
+//     divBoxes.append(...elements);
+// });
+
+
 
 buttonDestroy.addEventListener('click', () => {
   divBoxes.textContent = "";
   inputAmount.value = "";
-
 });
+
+let amount ;
+
+inputAmount.addEventListener('input', (event) => {
+  amount = event.currentTarget.value 
+  return amount });
+
+function create() {
+  const items = [];
+  
+  for (let i = 0; i < amount; i += 1) {
+    const newDivBoxes = document.createElement("div");
+
+    newDivBoxes.style.width = `${30 + 10 * i}px`;
+    newDivBoxes.style.height = `${30 + 10 * i}px`;
+    newDivBoxes.style.backgroundColor = getRandomHexColor();
+  
+    items.push( newDivBoxes);
+  }
+  divBoxes.append(...items)
+
+};
+
+buttonCreate.addEventListener('click',create);
