@@ -39,5 +39,4 @@ buttonDestroy.addEventListener('click', () => {
   divBoxes.textContent = "";
   inputAmount.value = "";
   amount = "";
-
 });
