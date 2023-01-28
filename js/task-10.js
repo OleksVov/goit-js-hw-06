@@ -10,30 +10,6 @@ const divBoxes = document.querySelector('#boxes');
 const inputAmount = document.querySelector('input');
 
 
-// let arrays = [];
-// inputAmount.addEventListener('input', (event) => {
-
-//   for (let i = 0; i < event.currentTarget.value; i += 1) {
-//     arrays[i] = i;
-//   };
-//   return arrays;
-// });
-
-// buttonCreate.addEventListener('click', () => {
-
-//   const elements = arrays.map(array => {
-
-//     const newDivBoxes = document.createElement("div");
-
-//       newDivBoxes.style.width = `${30 + 10 * array}px`;
-//       newDivBoxes.style.height = `${30 + 10 * array}px`;
-//       newDivBoxes.style.backgroundColor = getRandomHexColor();
-//       return newDivBoxes;
-//   })
-//     divBoxes.append(...elements);
-// });
-
-
 let amount = 0;
 
 inputAmount.addEventListener('input', (event) => {
