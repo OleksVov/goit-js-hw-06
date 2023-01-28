@@ -16,12 +16,12 @@ inputAmount.addEventListener('input', (event) => {
   amount = event.currentTarget.value 
   return amount });
 
-buttonCreate.addEventListener('click',createBoxes);
+buttonCreate.addEventListener('click', createBoxes);
 
 function createBoxes() {
   const items = [];
   
-  for (let i = 0; i < amount; i += 1) {
+  for (let i = divBoxes.children.length; i < amount; i += 1) {
     const newDivBoxes = document.createElement("div");
 
     newDivBoxes.style.width = `${30 + 10 * i}px`;
@@ -39,4 +39,5 @@ buttonDestroy.addEventListener('click', () => {
   divBoxes.textContent = "";
   inputAmount.value = "";
   amount = "";
+
 });
