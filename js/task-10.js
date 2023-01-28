@@ -34,19 +34,15 @@ const inputAmount = document.querySelector('input');
 // });
 
 
-
-buttonDestroy.addEventListener('click', () => {
-  divBoxes.textContent = "";
-  inputAmount.value = "";
-});
-
-let amount ;
+let amount = 0;
 
 inputAmount.addEventListener('input', (event) => {
   amount = event.currentTarget.value 
   return amount });
 
-function create() {
+buttonCreate.addEventListener('click',createBoxes);
+
+function createBoxes() {
   const items = [];
   
   for (let i = 0; i < amount; i += 1) {
@@ -62,4 +58,9 @@ function create() {
 
 };
 
-buttonCreate.addEventListener('click',create);
+
+buttonDestroy.addEventListener('click', () => {
+  divBoxes.textContent = "";
+  inputAmount.value = "";
+  amount = "";
+});
